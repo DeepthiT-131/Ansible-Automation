@@ -4,7 +4,7 @@
 #use your access key and secret which will be present in your aws account 
 aws_access_key: "aws creds"
 aws_secret_key: "aws creds"
-region: "us-east-1"
+region: "ap-southeast-1"
  
 # VPC
 vpc_cidr: 10.10.0.0/16
