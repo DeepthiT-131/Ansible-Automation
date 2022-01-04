@@ -22,8 +22,8 @@
     state: present
     vpc_id: "{{ vpc_id }}"
     #region: "{{ region }}"
-    region: us-east-1
-    az: us-east-1a
+    region: ap-southeast-1
+    az: ap-southeast-1a
     cidr: "{{ subnet_cidr }}"
     aws_access_key: "{{ aws_access_key }}"
     aws_secret_key: "{{ aws_secret_key }}"
@@ -42,7 +42,7 @@
     vpc_id: "{{ vpc_id }}"
     #region: "{{ region }}"
     region: us-east-1
-    az: us-east-1b
+    az: ap-southeast-1b
     cidr: "10.10.2.0/24"
     aws_access_key: "{{ aws_access_key }}"
     aws_secret_key: "{{ aws_secret_key }}"
@@ -72,7 +72,7 @@
     aws_secret_key: "{{ aws_secret_key }}"
     state: present
     name: beast
-    region: us-east-1
+    region: ap-southeast-1
     description: My Fancy Ex Parrot Subnet Group
     subnets:
           - "{{sub1_id}}"
@@ -84,7 +84,7 @@
                   aws_secret_key: "{{ aws_secret_key }}"
                   command: create
                   instance_name: new-database
-                  region: us-east-1
+                  region: ap-southeast-1
                   subnet: beast
                   #vpc_security_groups: 
                   #subnet: 
