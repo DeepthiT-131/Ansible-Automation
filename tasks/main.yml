@@ -107,7 +107,7 @@
      aws_secret_key: tsc+3owgtFiOSFjy+MQ2Jljc87O9bu9TLJeKz9W8
      name: ec2_keypair
      region: ap-southeast-1
-    register: ec2_keypair
+   register: keypair
  
  - name: Copy EC2 Private Key locally so it can be later on used to SSH into the instance
    copy: content="{{ keypair.key.private_key }}" dest={{ ec2_key_directory }}key.ppk
