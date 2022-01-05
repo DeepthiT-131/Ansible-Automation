@@ -24,9 +24,9 @@
     #region: "{{ region }}"
     region: ap-southeast-1
     az: ap-southeast-1a
-    cidr: "{{ subnet_cidr }}"
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
+    cidr: 10.10.0.0/24
+    aws_access_key: AKIA6LOUIYDTOV76QGIN
+    aws_secret_key: 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
     map_public: yes
     resource_tags:
       Name: "{{ subnet_name }}"
@@ -43,12 +43,12 @@
     #region: "{{ region }}"
     region: us-east-1
     az: ap-southeast-1b
-    cidr: "10.10.2.0/24"
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
+    cidr: 10.10.2.0/24
+    aws_access_key: AKIA6LOUIYDTOV76QGIN
+    aws_secret_key: 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
     map_public: yes
     resource_tags:
-      Name: "Ansible-Subnet-2"
+      Name: Ansible-Subnet-2
    register: subnet
 
  - name: set subnet id in variable
@@ -58,18 +58,18 @@
  - name: create IGW
    ec2_vpc_igw:
     vpc_id: "{{ vpc_id }}"
-    region: "{{ region }}"
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
+    region: ap-southeast-1
+    aws_access_key: AKIA6LOUIYDTOV76QGIN
+    aws_secret_key: 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
     state: present
     tags:
-      Name: "{{ igw_name }}"
+      Name: Traffic IGW
    register: igw
   
  #creating a rds subnet group with atleast 2 subnets which are assigned to the VPC created  
  - rds_subnet_group:
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
+    aws_access_key: AKIA6LOUIYDTOV76QGIN
+    aws_secret_key: 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
     state: present
     name: beast
     region: ap-southeast-1
@@ -80,8 +80,8 @@
 
 #creating a rds database 
  - rds:
-                  aws_access_key: "{{ aws_access_key }}"
-                  aws_secret_key: "{{ aws_secret_key }}"
+                  aws_access_key: AKIA6LOUIYDTOV76QGIN
+                  aws_secret_key: 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
                   command: create
                   instance_name: new-database
                   region: ap-southeast-1
