@@ -103,8 +103,8 @@
 #creating an ec2 instance 
  - name: create a new ec2 key pair
     ec2_key:
-     aws_access_key: AKIA6LOUIYDTOV76QGIN
-     aws_secret_key: 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
+     aws_access_key: "AKIA6LOUIYDTOV76QGIN"
+     aws_secret_key: "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"
      name: ec2_keypair
      region: "{{ region }}"
     register: keypair
@@ -125,6 +125,6 @@
     count_tag:
       Name: apacheserver
     exact_count: 1
-    aws_access_key: AKIA6LOUIYDTOV76QGIN
-    aws_secret_key: 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
+    aws_access_key: "AKIA6LOUIYDTOV76QGIN"
+    aws_secret_key: "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"
   
