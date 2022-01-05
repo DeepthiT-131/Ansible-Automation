@@ -2,12 +2,12 @@
 
  - name: create VPC
    ec2_vpc_net:
-     name: "{{ vpc_name }}"
-     cidr_block: "{{ vpc_cidr }}"
-     region: "{{ region }}"
+     name: Ansible VPC
+     cidr_block: 10.10.0.0/16
+     region: ap-southeast-1
      state: present
-     aws_access_key: "{{ aws_access_key }}"
-     aws_secret_key: "{{ aws_secret_key }}"
+     aws_access_key: AKIA6LOUIYDTOV76QGIN
+     aws_secret_key: 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
     # tenancy: dedicated
    register: vpc
 
