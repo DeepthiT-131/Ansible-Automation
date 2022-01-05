@@ -102,12 +102,12 @@
 
 #creating an ec2 instance 
   - name: create a new ec2 key pair
-    ec2_key:
-     aws_access_key: AKIA6LOUIYDTOV76QGIN
-     aws_secret_key: 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
-     name: ec2_keypair
-     region: "{{ region }}"
-    register: keypair
+     ec2_key:
+      aws_access_key: AKIA6LOUIYDTOV76QGIN
+      aws_secret_key: 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
+      name: ec2_keypair
+      region: "{{ region }}"
+     register: keypair
  
   - name: Copy EC2 Private Key locally so it can be later on used to SSH into the instance
     copy: content="{{ keypair.key.private_key }}" dest={{ ec2_key_directory }}key.ppk
@@ -123,7 +123,7 @@
      vpc_subnet_id: "{{ subnet.subnet.id }}"
      key_name: "{{ keypair.key.name  }}"
      count_tag:
-     Name: apacheserver
+       Name: apacheserver
      exact_count: 1
      aws_access_key: AKIA6LOUIYDTOV76QGIN
      aws_secret_key: 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
