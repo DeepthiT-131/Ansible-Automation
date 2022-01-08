@@ -68,7 +68,7 @@
   
  #creating a rds subnet group with atleast 2 subnets which are assigned to the VPC created  
  - rds_subnet_group:
-    aws_access_key: 
+    aws_access_key: AKIA6LOUIYDTGMARHBXQ
     aws_secret_key: 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
     state: present
     name: beast
