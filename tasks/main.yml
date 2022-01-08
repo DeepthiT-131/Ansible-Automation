@@ -99,9 +99,7 @@
                           Application: cms
 
 #creating an ec2 instance 
- - hosts: localhost
-  tasks:
-  - name: create a new ec2 key pair, returns generated private key
+ - name: create a new ec2 key pair, returns generated private key
     ec2_key:
       name: my_keypair
       region: ap-southeast-1
