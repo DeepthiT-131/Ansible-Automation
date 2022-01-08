@@ -116,8 +116,8 @@
     image: ami-055d15d9cfddf7bd3
     wait: yes
     instance_type: t2.micro
-    region: "{{ region }}"
-    group_id: "{{ security_group.group_id }}"
+    region: ap-southeast-1
+    group_id: sg-061cc2302a615fff0
     vpc_subnet_id: "{{ subnet.subnet.id }}"
     key_name: "{{ keypair.key.name  }}"
     count_tag:
