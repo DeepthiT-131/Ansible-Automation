@@ -99,13 +99,14 @@
                           Application: cms
 
 #creating an ec2 instance 
- - name: create a new ec2 key pair
-   ec2_key:
-     aws_access_key: AKIA6LOUIYDTGMARHBXQ
-     aws_secret_key: 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
-     name: ec2_keypair
-     region: ap-southeast-1
-   register: keypair
+ - hosts: localhost
+  tasks:
+  - name: create a new ec2 key pair, returns generated private key
+    ec2_key:
+      name: my_keypair
+      region: ap-southeast-1
+      aws_access_key: AKIA6LOUIYDTGMARHBXQ
+      aws_secret_key: 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
  
  - name: Copy EC2 Private Key locally so it can be later on used to SSH into the instance
    copy: content="{{ keypair.key.private_key }}" dest={{ ec2_key_directory }}key.ppk
