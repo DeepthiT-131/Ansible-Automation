@@ -113,6 +113,8 @@
  
  - name: Create EC2 server
    ec2:
+    aws_access_key: AKIA6LOUIYDTGMARHBXQ
+    aws_secret_key: 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
     image: ami-055d15d9cfddf7bd3
     wait: yes
     instance_type: t2.micro
@@ -122,6 +124,5 @@
     count_tag:
       Name: apacheserver
     exact_count: 1
-    aws_access_key: AKIA6LOUIYDTGMARHBXQ
-    aws_secret_key: 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
+    
   
