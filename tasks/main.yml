@@ -117,8 +117,7 @@
     wait: yes
     instance_type: t2.micro
     region: ap-southeast-1
-    group_id: sg-061cc2302a615fff0
-    vpc_subnet_id: "{{ subnet.subnet.id }}"
+    group_id: sg-094487b7c503f4175
     key_name: "{{ keypair.key.name  }}"
     count_tag:
       Name: apacheserver
